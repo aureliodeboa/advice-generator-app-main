@@ -1,9 +1,9 @@
  let apiFunc = async ()=>{
 
-    let response= await  fetch('http://api.quotable.io/random');
+    let response= await  fetch('https://api.adviceslip.com/advice');
     let json= await response.json();
-    adviceQuote.innerHTML = `❛❛ ${json.content} ❜❜`;
-    adviceTitle.innerHTML = `Advice # ${Math.floor(Math.random()*1000)}`;
+    adviceQuote.innerHTML = `❛❛ ${json.slip.advice} ❜❜`;
+    adviceTitle.innerHTML = `Advice # ${json.slip.id}`;
  }
  
  apiFunc();
